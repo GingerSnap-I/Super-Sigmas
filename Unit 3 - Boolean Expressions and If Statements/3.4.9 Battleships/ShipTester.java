@@ -4,7 +4,7 @@ public class ShipTester
     {
         Battleship sub = new Battleship("submarine", 6);
         Battleship raft = new Battleship("raft", 2);
-        Battleship destroyer = new Battleship("destroyer", 9);
+        Battleship destroyer = new Battleship("destroyer", 11);
      
         System.out.println(sub);
         System.out.println("Sub has power " + sub.getPower());
@@ -16,15 +16,15 @@ public class ShipTester
         System.out.println("Destroyer has power " + destroyer.getPower());
         
         System.out.println("\nRaft attacks Sub");
-        sub.isAttacked(raft.getPower());
+        sub.updateDamage(raft.getPower());
         System.out.println(sub);
         
         System.out.println("\nDestroyer attacks Raft");
-        raft.isAttacked(destroyer.getPower());
+        raft.updateDamage(destroyer.getPower());
         System.out.println(raft);
         
         System.out.println("\nSub attacks Destroyer");
-        destroyer.isAttacked(sub.getPower());
+        destroyer.updateDamage(sub.getPower());
         System.out.println(destroyer);
 
 
