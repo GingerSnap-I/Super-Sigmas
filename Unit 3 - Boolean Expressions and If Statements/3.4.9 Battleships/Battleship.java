@@ -1,51 +1,32 @@
-public class Battleship
+public class ShipTester
 {
-    private String name;  // type of ship
-    private int power;   // power of attack in range [1 - 10]
-    private int health; // health of the ship
-    
-    // Constructor
-    public Battleship(String shipType, int attackPower)
+    public static void main(String[] args)
     {
-        name = shipType;
-        power = attackPower;
-        health = 100;
-    }
-    
-    // Modifies the health of the battleship
-    public void isAttacked(int attackPower)
-    {
-        if (attackPower >= 8) {
-            health -= 7;
-        } else if (attackPower < 4) {
-            health -= 3;
-        } else {
-            health -= 5;
-        }
+        Battleship sub = new Battleship("submarine", 6);
+        Battleship raft = new Battleship("raft", 2);
+        Battleship destroyer = new Battleship("destroyer", 11);
+     
+        System.out.println(sub);
+        System.out.println("Sub has power " + sub.getPower());
+        
+        System.out.println(raft);
+        System.out.println("Raft has power " + raft.getPower());
+        
+        System.out.println(destroyer);
+        System.out.println("Destroyer has power " + destroyer.getPower());
+        
+        System.out.println("\nRaft attacks Sub");
+        sub.updateDamage(raft.getPower());
+        System.out.println(sub);
+        
+        System.out.println("\nDestroyer attacks Raft");
+        raft.updateDamage(destroyer.getPower());
+        System.out.println(raft);
+        
+        System.out.println("\nSub attacks Destroyer");
+        destroyer.updateDamage(sub.getPower());
+        System.out.println(destroyer);
+
 
     }
-    
-    // Returns true if the health of
-    // the ship is greater than 0
-    public boolean stillFloating()
-    {
-        if (health > 0) {
-            return true;
-        }
-        return false;
-    }
-    
-    // Returns the power of the ship
-    public int getPower()
-    {
-        return power;
-    }
-    
-    // Returns string representation in the form
-    // Battleship name
-    public String toString()
-    {
-        return name + "(" + health + ")";    
-    }
-    
 }
