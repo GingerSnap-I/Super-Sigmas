@@ -1,9 +1,16 @@
 import java.util.Scanner;
 
-public class FindMinimum 
+public class FindMedian 
 {
     public static int min(int num1, int num2) {
         if (num1 > num2) {
+            return num2;
+        }
+        return num1;
+    }
+    
+    public static int max(int num1, int num2) {
+        if (num1 < num2) {
             return num2;
         }
         return num1;
@@ -21,6 +28,12 @@ public class FindMinimum
         int two = scan.nextInt();
         System.out.println("Enter the third integer: ");
         int three = scan.nextInt();
-        System.out.println("The minimum is " + min(three, min(two, one)));
+        
+        int sum = one + two + three;
+        int minNum = min(three, min(two, one));
+        int maxNum = max(three, max(two, one));
+
+        int foundMedian = sum - (minNum + maxNum);
+        System.out.println("The median is "+ foundMedian);
     }
 }
