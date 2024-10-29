@@ -1,7 +1,7 @@
 public static int sumStrings(String one, String two, String three)
 {
-  String toRetrun = Integer.valueOf(one)
-  toReturn += Integer.valueOf(two)
+  String toRetrun = Integer.valueOf(one);
+  toReturn += Integer.valueOf(two);
   toReturn += Integer.valueOf(three);
-  return toReturn
+  return toReturn;
 }
