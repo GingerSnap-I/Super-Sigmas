@@ -1,0 +1,6 @@
+public boolean isLowerCase(String phrase)
+{
+  String stringLower = phrase.toLowerCase();
+  boolean tOrF = phrase.equals(stringLower);
+  return tOrF;
+}
