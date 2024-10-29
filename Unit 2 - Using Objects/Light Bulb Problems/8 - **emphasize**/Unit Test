@@ -1,4 +1,0 @@
-public String emphasize(String text)
-{
-    return "**"+text+"**";
-}

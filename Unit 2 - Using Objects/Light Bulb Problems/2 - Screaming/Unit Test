@@ -1,4 +1,0 @@
-public String screaming(String phrase)
-{
-   return phrase.toUpperCase();
-}

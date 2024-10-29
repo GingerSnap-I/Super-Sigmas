@@ -1,4 +1,0 @@
-public String salutation(String  name)
-{
-    return "Mr." + name.substring(name.indexOf(' '), name.length());
-}
